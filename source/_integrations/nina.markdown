@@ -12,8 +12,8 @@ ha_codeowners:
 ha_domain: nina
 ha_platforms:
   - binary_sensor
-  - sensor
   - diagnostics
+  - sensor
 ha_integration_type: service
 ha_quality_scale: silver
 ---
@@ -21,6 +21,8 @@ ha_quality_scale: silver
 The [NINA](https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warn-App-NINA/warn-app-nina_node.html) {% term integration %} displays warnings from the [Bundesamt für Bevölkerungsschutz und Katastrophenhilfe](https://www.bbk.bund.de/) in Germany.
 
 For each county/city it creates warning slots that change to Unsafe when warnings are present. The details of the warning are provided in separate entities.
+
+Use case: Make your home react to official warnings. For example, you can turn off your ventilation system to help prevent smoke from entering your home when a fire is reported, or close the skylights when a storm is expected.
 
 {% include integrations/config_flow.md %}
 
@@ -127,10 +129,6 @@ The response data is a string with the description as provided by NINA.
 ## Data updates
 
 The integration checks for warnings every 5 minutes.
-
-## Known limitations
-
-This integration may only work with an Internet connection that supports IPv4.
 
 ## Removing the integration
 
